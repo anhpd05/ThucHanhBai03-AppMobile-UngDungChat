@@ -1,65 +1,43 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import { useState } from 'react';
 import {
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+  DefaultTheme,
+  NavigationContainer,
+  type Theme,
+} from '@react-navigation/native';
+import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import LoginScreen from './component/auth/LoginScreen';
-import RegisterScreen from './component/auth/RegisterScreen';
-import { StudentHomeScreen } from './component/student';
+import { AuthProvider } from './src/context/AuthContext';
+import { ChatProvider } from './src/context/ChatContext';
+import { NotificationProvider } from './src/context/NotificationContext';
+import { RootNavigator } from './src/navigation/RootNavigator';
+import { colors } from './src/theme';
 
-type Screen = 'login' | 'register' | 'home';
-
-// function App() {
-//   const isDarkMode = useColorScheme() === 'dark';
-//   const [screen, setScreen] = useState<Screen>('login');
-
-//   return (
-//     <SafeAreaProvider>
-//       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-//       <View style={styles.container}>
-//         {screen === 'login' && (
-//           <LoginScreen
-//             onLoginSuccess={() => setScreen('home')}
-//             onGoToRegister={() => setScreen('register')}
-//           />
-//         )}
-//         {screen === 'register' && (
-//           <RegisterScreen
-//             onRegisterSuccess={() => setScreen('home')}
-//             onGoToLogin={() => setScreen('login')}
-//           />
-//         )}
-//         {screen === 'home' && (
-//           <HomeScreen onLogout={() => setScreen('login')} />
-//         )}
-//       </View>
-//     </SafeAreaProvider>
-//   );
-// }
+const navigationTheme: Theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: colors.primary,
+    background: colors.background,
+    card: colors.card,
+    text: colors.text,
+    border: colors.border,
+  },
+};
 
 function App() {
   return (
     <SafeAreaProvider>
-      <StudentHomeScreen />
+      <StatusBar barStyle="dark-content" />
+      <AuthProvider>
+        <NotificationProvider>
+          <ChatProvider>
+            <NavigationContainer theme={navigationTheme}>
+              <RootNavigator />
+            </NavigationContainer>
+          </ChatProvider>
+        </NotificationProvider>
+      </AuthProvider>
     </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
