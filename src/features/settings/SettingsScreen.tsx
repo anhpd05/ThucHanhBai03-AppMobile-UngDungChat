@@ -61,7 +61,7 @@ export function SettingsScreen() {
           <Icon name="logout" size={20} color={colors.danger} />
           <Text style={styles.logoutText}>Đăng xuất</Text>
         </TouchableOpacity>
-        <Text style={styles.version}>ChatApp v1.0 · Bài thực hành 03</Text>
+        <Text style={styles.version}>ChatApp v1.0 · Phạm Đức Anh · PTIT</Text>
       </ScrollView>
     </SafeAreaView>
   );

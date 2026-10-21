@@ -1,7 +1,7 @@
 export const colors = {
-  primary: '#2F6BFF',
-  primarySoft: '#E8EEFF',
-  background: '#F5F7FB',
+  primary: '#0B7A7C',
+  primarySoft: '#E3F4F4',
+  background: '#F6F4EF',
   card: '#FFFFFF',
   text: '#111827',
   textMuted: '#6B7280',
@@ -10,9 +10,9 @@ export const colors = {
   offline: '#9CA3AF',
   danger: '#EF4444',
   dangerSoft: '#FEE2E2',
-  bubbleMine: '#2F6BFF',
+  bubbleMine: '#0B7A7C',
   bubbleMineText: '#FFFFFF',
-  bubbleMineMeta: '#DCE6FF',
+  bubbleMineMeta: '#CDEBEB',
   bubbleOther: '#FFFFFF',
   white: '#FFFFFF',
 };

@@ -12,7 +12,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Icon } from '../../components/Icon';
 import { useAuth } from '../../context/AuthContext';
-import { colors, radius, shadowCard, spacing, typography } from '../../theme';
+import { colors, spacing, typography } from '../../theme';
 
 export function LoginScreen() {
   const { login, demoAccount } = useAuth();
@@ -58,13 +58,19 @@ export function LoginScreen() {
           contentContainerStyle={styles.content}
           keyboardShouldPersistTaps="handled"
         >
-          <View style={styles.logo}>
-            <Icon name="chat" size={36} color={colors.white} />
+          <View style={styles.hero}>
+            <View style={styles.bubbleBig}>
+              <Icon name="chat" size={30} color={colors.primary} />
+            </View>
+            <Text style={styles.title}>ChatApp</Text>
+            <Text style={styles.subtitle}>
+              Nhắn tin nhanh, gọn, không quảng cáo
+            </Text>
           </View>
-          <Text style={styles.title}>ChatApp</Text>
-          <Text style={styles.subtitle}>Kết nối với bạn bè mọi lúc</Text>
 
-          <View style={styles.card}>
+          <View style={styles.sheet}>
+            <Text style={styles.sheetTitle}>Đăng nhập</Text>
+
             <Text style={styles.label}>Tài khoản</Text>
             <View
               style={[
@@ -141,11 +147,11 @@ export function LoginScreen() {
             >
               <Text style={styles.buttonText}>Đăng nhập</Text>
             </TouchableOpacity>
-          </View>
 
-          <Text style={styles.hint}>
-            {`Tài khoản demo: ${demoAccount.username} / ${demoAccount.password}`}
-          </Text>
+            <Text style={styles.hint}>
+              {`Dùng thử: ${demoAccount.username} / ${demoAccount.password}`}
+            </Text>
+          </View>
         </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
@@ -155,40 +161,55 @@ export function LoginScreen() {
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
-    backgroundColor: colors.background,
+    backgroundColor: colors.primary,
   },
   flex: {
     flex: 1,
   },
   content: {
     flexGrow: 1,
-    justifyContent: 'center',
-    padding: spacing.xl,
   },
-  logo: {
-    width: 72,
-    height: 72,
-    borderRadius: radius.xl,
-    backgroundColor: colors.primary,
+  hero: {
+    flex: 1,
+    minHeight: 220,
+    justifyContent: 'center',
+    paddingHorizontal: spacing.xl,
+    paddingTop: spacing.xl,
+  },
+  bubbleBig: {
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    borderBottomLeftRadius: 6,
+    backgroundColor: colors.white,
     alignItems: 'center',
     justifyContent: 'center',
-    alignSelf: 'center',
   },
   title: {
-    ...typography.appTitle,
-    textAlign: 'center',
+    fontSize: 34,
+    fontWeight: '800',
+    color: colors.white,
     marginTop: spacing.lg,
+    letterSpacing: 0.5,
   },
   subtitle: {
-    ...typography.bodyMuted,
-    textAlign: 'center',
+    fontSize: 14,
+    color: colors.white,
+    marginTop: spacing.xs,
   },
-  card: {
-    backgroundColor: colors.card,
-    borderRadius: radius.lg,
-    padding: spacing.xl,
-    marginTop: spacing.xl,
-    ...shadowCard,
+  sheet: {
+    backgroundColor: colors.background,
+    borderTopLeftRadius: 32,
+    borderTopRightRadius: 8,
+    paddingHorizontal: spacing.xl,
+    paddingTop: spacing.xl,
+    paddingBottom: spacing.xxl,
+  },
+  sheetTitle: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: colors.text,
+    marginBottom: spacing.lg,
   },
   label: {
     ...typography.caption,
@@ -201,11 +222,9 @@ const styles = StyleSheet.create({
   inputRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderWidth: 1,
+    borderBottomWidth: 1.5,
     borderColor: colors.border,
-    borderRadius: radius.md,
-    height: 50,
-    paddingHorizontal: spacing.md,
+    height: 48,
     gap: spacing.sm,
   },
   inputError: {
@@ -224,16 +243,16 @@ const styles = StyleSheet.create({
   },
   formError: {
     color: colors.danger,
-    textAlign: 'center',
     marginTop: spacing.md,
   },
   button: {
     backgroundColor: colors.primary,
     height: 50,
-    borderRadius: radius.md,
+    borderRadius: 25,
+    borderBottomRightRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: spacing.lg,
+    marginTop: spacing.xl,
   },
   buttonText: {
     color: colors.white,
@@ -242,7 +261,6 @@ const styles = StyleSheet.create({
   },
   hint: {
     ...typography.caption,
-    textAlign: 'center',
     marginTop: spacing.lg,
   },
 });
