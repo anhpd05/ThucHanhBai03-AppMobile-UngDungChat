@@ -1,0 +1,107 @@
+import type { User } from '../types/models';
+import { minutesAgo } from '../utils/formatTime';
+
+export const demoAccount = { username: 'demo', password: '123456' };
+
+export const currentUser: User = {
+  id: 'me',
+  name: 'Nguyễn Minh Anh',
+  username: 'demo',
+  email: 'demo@chatapp.vn',
+  avatar: require('../../assets/avatars/me.jpg'),
+  isOnline: true,
+  lastSeen: minutesAgo(0),
+};
+
+export const users: User[] = [
+  {
+    id: 'u1',
+    name: 'Trần Thu Hà',
+    username: 'thuha',
+    email: 'thuha@chatapp.vn',
+    avatar: require('../../assets/avatars/u1.jpg'),
+    isOnline: true,
+    lastSeen: minutesAgo(0),
+  },
+  {
+    id: 'u2',
+    name: 'Lê Hoàng Nam',
+    username: 'hoangnam',
+    email: 'hoangnam@chatapp.vn',
+    avatar: require('../../assets/avatars/u2.jpg'),
+    isOnline: true,
+    lastSeen: minutesAgo(0),
+  },
+  {
+    id: 'u3',
+    name: 'Phạm Ngọc Linh',
+    username: 'ngoclinh',
+    email: 'ngoclinh@chatapp.vn',
+    avatar: require('../../assets/avatars/u3.jpg'),
+    isOnline: false,
+    lastSeen: minutesAgo(15),
+  },
+  {
+    id: 'u4',
+    name: 'Đỗ Quang Huy',
+    username: 'quanghuy',
+    email: 'quanghuy@chatapp.vn',
+    avatar: require('../../assets/avatars/u4.jpg'),
+    isOnline: true,
+    lastSeen: minutesAgo(0),
+  },
+  {
+    id: 'u5',
+    name: 'Vũ Thảo My',
+    username: 'thaomy',
+    email: 'thaomy@chatapp.vn',
+    avatar: require('../../assets/avatars/u5.jpg'),
+    isOnline: false,
+    lastSeen: minutesAgo(120),
+  },
+  {
+    id: 'u6',
+    name: 'Bùi Đức Long',
+    username: 'duclong',
+    email: 'duclong@chatapp.vn',
+    avatar: require('../../assets/avatars/u6.jpg'),
+    isOnline: false,
+    lastSeen: minutesAgo(1500),
+  },
+  {
+    id: 'u7',
+    name: 'Ngô Khánh Vy',
+    username: 'khanhvy',
+    email: 'khanhvy@chatapp.vn',
+    avatar: require('../../assets/avatars/u7.jpg'),
+    isOnline: true,
+    lastSeen: minutesAgo(0),
+  },
+  {
+    id: 'u8',
+    name: 'Hoàng Minh Tuấn',
+    username: 'minhtuan',
+    email: 'minhtuan@chatapp.vn',
+    avatar: require('../../assets/avatars/u8.jpg'),
+    isOnline: false,
+    lastSeen: minutesAgo(45),
+  },
+  {
+    id: 'u9',
+    name: 'Đặng Phương Thảo',
+    username: 'phuongthao',
+    email: 'phuongthao@chatapp.vn',
+    avatar: require('../../assets/avatars/u9.jpg'),
+    isOnline: true,
+    lastSeen: minutesAgo(0),
+  },
+  {
+    id: 'u10',
+    name: 'Nguyễn Gia Bảo',
+    username: 'giabao',
+    email: 'giabao@chatapp.vn',
+    avatar: require('../../assets/avatars/u10.jpg'),
+    isOnline: false,
+    lastSeen: minutesAgo(4320),
+  },
+];
