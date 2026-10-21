@@ -95,3 +95,8 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+## Bài thực hành 03 - Ứng dụng chat
+
+Chạy: `npx react-native start --port 8082` rồi `npx react-native run-android --port 8082 --no-packager`.
+Tài khoản demo: `demo` / `123456`. Ảnh chụp 6 màn hình nằm trong `docs/screenshots/`.
