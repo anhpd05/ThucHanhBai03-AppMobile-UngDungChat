@@ -56,9 +56,9 @@ Hiển thị thông tin tài khoản (Phạm Đức Anh, `@demo`, email). Hai c�
 
 ```sh
 npm install
-npx react-native start --port 8082
+npm start
 # mở terminal khác, máy ảo Android đang bật
-npx react-native run-android --port 8082 --no-packager
+npm run android
 ```
 
 Tài khoản demo: `demo` / `123456`.
